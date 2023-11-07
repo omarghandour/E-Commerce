@@ -5,10 +5,10 @@ export const siteConfig = {
   description: "Simple Store For Everyone",
   footer: [
     { name: "Home", href: "/" },
-    { name: "About", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Shipping & Return Policy", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "About", href: "about" },
+    { name: "Terms & Conditions", href: "tac" },
+    { name: "Shipping & Return Policy", href: "sarp" },
+    { name: "Privacy Policy", href: "pp" },
+    { name: "FAQ", href: "faq" },
   ],
 }
