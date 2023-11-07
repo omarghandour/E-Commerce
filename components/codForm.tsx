@@ -69,15 +69,15 @@ const CodForm = () => {
  
           <div>
                     <label htmlFor="fullname">Full name</label>
-                    <input onChange={(e) => setFullname(e.target.value)} value={fullname} type="text" placeholder='Omar Ghandour' id="fullname" />
+                    <input onChange={(e) => setFullname(e.target.value)} value={fullname} type="text" placeholder='Omar Ghandour' id="fullname" required/>
           </div>
           <div>
                     <label htmlFor="email">Email</label>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder='omar@gmail.com' id="email" />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder='omar@gmail.com' id="email" required/>
           </div>
           <div>
                     <label htmlFor="number">Number</label>
-                    <input onChange={(e) => setNumber(e.target.value)} value={number} type="text" placeholder='01...' id="number" />
+                    <input onChange={(e) => setNumber(e.target.value)} value={number} type="text" placeholder='01...' id="number" required/>
           </div>
           <button onClick={btnn} className="bg-green-700 p-3 text-white font-bold" type='submit'>{btn ? "Loading..." : "Submit"}</button>
     </form>
