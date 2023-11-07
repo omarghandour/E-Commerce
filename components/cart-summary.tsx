@@ -5,6 +5,7 @@ import { Loader2 } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
 
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function CartSummary() {
     const {formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout} = useShoppingCart()
@@ -12,6 +13,23 @@ export function CartSummary() {
     const isDisabled = isLoading || cartCount === 0
     const shippingAmount = cartCount! > 0 ? 500 : 0
     const totalAmount = totalPrice! + shippingAmount
+    
+    
+    async function onCheckoute() {
+      setLoading(true)
+    const response = await fetch('/api/cod',{
+      method: "POST",
+      body: JSON.stringify(cartDetails)
+    })
+    const data = await response.json()
+    const result = await redirectToCheckout(data.id)
+    if(result?.error){
+       console.error(result)      
+    }
+    setLoading(false)
+    }
+
+
   async function onCheckout() {
     setLoading(true)
     const response = await fetch('/api/checkout',{
@@ -25,6 +43,7 @@ export function CartSummary() {
     }
     setLoading(false)
   }
+// console.log(cartDetails);
 
   return (
     <section
@@ -53,10 +72,12 @@ export function CartSummary() {
       </dl>
 
       <div className="mt-6">
-        <Button onClick={onCheckout} className="w-full" disabled={isDisabled}>
+        <Link href={'/cod'}>
+        <Button  className="w-full" disabled={isDisabled}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? "Loading..." : "Checkout"}
-        </Button>
+        </Button></Link>
+        
       </div>
     </section>
   )

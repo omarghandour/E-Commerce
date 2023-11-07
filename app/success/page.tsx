@@ -25,7 +25,7 @@ const customerDetails = checkoutSession?.customer_details
           >
             Go back home
           </Link>
-          <a href="#" className="text-sm font-semibold">
+          <a href="tel:+201557775180" className="text-sm font-semibold">
             Contact support <span aria-hidden="true">&rarr;</span>
           </a>
         </div>

@@ -6,7 +6,10 @@ import { inventory } from "@/config/inventory"
 import { stripe } from "@/lib/stripe"
 
 export async function POST(request: Request) {
+          
           const cartDetails = await request.json()
+          // console.log(cartDetails);
+
           const lineItems = validateCartItems(inventory, cartDetails)
           const origin = request.headers.get('origin')
           const session = await stripe.checkout.sessions.create({
@@ -26,5 +29,7 @@ export async function POST(request: Request) {
                     success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
                     cancel_url: `${origin}/cart`
           })
+          console.log(session);
+          
           return NextResponse.json(session)
 }
