@@ -17,8 +17,8 @@ export function ProductGallery({ product }: Props) {
   return (
     <div className="flex flex-col-reverse">
       {/* Image Grid */}
-      <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-        <ul className="grid grid-cols-4 gap-6">
+      <div className="mx-auto mt-6  w-full max-w-2xl xs:block sm:block lg:max-w-none ">
+        <ul className="grid grid-cols-4 gap-6 ml-4">
           {product.images.map((image, index) => (
             <div
               key={image._key as string}

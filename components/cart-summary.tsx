@@ -13,6 +13,7 @@ export function CartSummary() {
     const isDisabled = isLoading || cartCount === 0
     const shippingAmount = cartCount! > 0 ? 500 : 0
     const totalAmount = totalPrice! + shippingAmount
+    console.log(formattedTotalPrice,'.', totalPrice,'.', cartDetails,'.', cartCount,'.', redirectToCheckout);
     
     
     async function onCheckoute() {

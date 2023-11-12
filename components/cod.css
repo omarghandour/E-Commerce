@@ -9,3 +9,69 @@ form > div {
 input {
   @apply shadow-md px-6 py-2 border border-slate-300;
 }
+@media (max-width: 700px) {
+  .search{
+    position: absolute;
+    background-color: white;
+    left: 25%;
+    width: 60%;
+    top: 67%;
+    height: 25%;
+    }
+ .hedr{
+  height: 120px;
+  }
+  .SubmitLogo{
+    display: block !important;
+    height: 30px;
+    margin-left: 15px;
+    top: 67%;
+    position: absolute;
+    width: 70%;
+    left: 10%;
+  }
+  .click{
+    display: block;
+    left: 19%;
+    top: 110%;
+    width: 65%;
+    position: absolute;
+    background: white;
+  }
+}
+.searchLogo{
+  display: none;
+}
+.SubmitLogo{
+  display: block !important;
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+@media (min-width: 700px ) and (max-width: 1024px) {
+  .SubmitLogo{
+    display: block !important;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    position: absolute;
+    top: 38% !important;
+    left: 28% !important;
+  }
+  .search{
+    position: absolute;
+    width: 40%;
+    left: 35%;
+  }
+}
+@media (min-width: 1024px) {
+  .SubmitLogo{
+    display: block !important;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    position: absolute;
+    left: 30%;
+    top: 25%;
+  }
+}

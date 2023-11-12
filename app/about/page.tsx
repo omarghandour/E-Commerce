@@ -17,9 +17,9 @@ const page = () => {
             Our team is made up of talented professionals with diverse backgrounds and expertise. We believe in collaboration, innovation, and delivering excellence in everything we do. Meet our core team members:
         </p>
         <ul>
-            <li>John Doe - CEO</li>
-            <li>Jane Smith - COO</li>
-            <li>Mike Johnson - CTO</li>
+            <li>Omar Ghandour - CEO</li>
+            {/* <li>Jane Smith - COO</li>
+            <li>Mike Johnson - CTO</li> */}
         </ul>
 
         <h2>Contact Us</h2>
