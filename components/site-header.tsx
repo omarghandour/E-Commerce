@@ -41,9 +41,9 @@ export function SiteHeader() {
             className="h-9 lg:w-[300px] search"
             defaultValue={defaultSearchQuery}
           />
-          <button type="submit">
+          {/* <button type="submit">
           <img className="SubmitLogo" src="/submit-success-check-mark-svgrepo-com.svg" alt="Submit icon" />
-          </button>
+          </button> */}
         </form>
         <div className="flex items-center space-x-1">
           <Link href="/cart">

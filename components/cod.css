@@ -61,7 +61,8 @@ input {
   .search{
     position: absolute;
     width: 40%;
-    left: 35%;
+    left: 30%;
+    top: 25%;
   }
 }
 @media (min-width: 1024px) {
