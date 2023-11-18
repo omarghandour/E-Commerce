@@ -16,7 +16,7 @@ const filters = [
     name: "Category",
     options: [
       { value: "bags", label: "Bags" },
-      { value: "belts", label: "Belts" },
+      { value: "beanbag", label: "Bean Bag" },
       { value: "gloves", label: "Gloves" },
       { value: "scarves", label: "Scarves" },
       { value: "wallets", label: "Wallets" },
@@ -32,6 +32,7 @@ const filters = [
       { value: "l", label: "Large" },
       { value: "xl", label: "X-Large" },
       { value: "one-size", label: "One Size" },
+      {value: "1kg", label: "1Kg"}
     ],
   },
   {
@@ -43,6 +44,9 @@ const filters = [
       { value: "brown", label: "Brown" },
       { value: "green", label: "Green" },
       { value: "yellow", label: "Yellow" },
+      { value: "red", label: "Red" },
+      { value: "white", label: "White" },
+      { value: "gray", label: "Gray" },
     ],
   },
 ]
