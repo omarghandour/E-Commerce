@@ -10,12 +10,13 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 export const metadata: Metadata = {
   title: siteConfig.name, 
-  manifest: './manifest.json',
+  manifest: '/manifest.json',
   description: siteConfig.description,
   icons:{
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
+    apple: '/logo.png'
   },
- 
+ themeColor: "#fff"
 }
 
 interface RootLayoutProps {
