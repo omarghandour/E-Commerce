@@ -15,7 +15,8 @@ interface Props {
 }
 
 export function ProductInfo({product}: Props ) {
- const [selectedSize, SetSelectedSize] = useState(product.sizes[0])
+ const [selectedSize, SetSelectedSize] = useState(product.sizes[0]);
+ const [selectedColor, SetSelectedColor] = useState(product.colors[0])
  const {addItem, incrementItem, cartDetails} = useShoppingCart()
  const {toast} = useToast()
  const isInCart = !!cartDetails?.[product._id]
@@ -23,7 +24,8 @@ export function ProductInfo({product}: Props ) {
     const item = {
       ...product, 
       product_data: {
-        size: selectedSize
+        size: selectedSize,
+        color: selectedColor
       }
     }
     isInCart ? incrementItem(item._id) : addItem(item)
@@ -64,6 +66,16 @@ export function ProductInfo({product}: Props ) {
         {product.sizes.map((size) => (
           <Button onClick={()=> SetSelectedSize(size)} key={size}  variant={selectedSize === size ? 'default' : "outline"} className="mr-2 mt-4" >
             {getSizeName(size)}
+          </Button>
+        ))}
+      </div>
+      <div className="mt-4">
+        <p>
+          color: <strong>{selectedColor}</strong>
+        </p>
+        {product.colors.map((color) => (
+          <Button onClick={()=> SetSelectedColor(color)} key={color}  variant={selectedColor === color ? 'default' : "outline"} className="mr-2 mt-4" >
+            {color}
           </Button>
         ))}
       </div>

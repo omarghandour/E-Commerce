@@ -30,12 +30,12 @@ const codSchema = new Schema({
   prices: {
     type: [Number]
 },
-colors: [
-  [String]
+color: [
+  String
 ],
-sizes: [
-{  size: String
-}],
+size: {
+type: String
+},
 quantity: {
   type: [Number]
 }, 
