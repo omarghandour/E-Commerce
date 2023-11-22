@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
+import NotReq from "./notReq"
 
 export function SiteHeader() {
   const Pathname = usePathname()
@@ -31,6 +32,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="hedr mx-auto flex h-16 max-w-6xl items-center justify-between space-x-4 px-6 sm:space-x-0">
         <MainNav />
+        <NotReq />
         <form onSubmit={onSubmit} className=" items-center lg:inline-flex">
           <Input
             id="search"
@@ -47,6 +49,7 @@ export function SiteHeader() {
         </form>
         <div className="flex items-center space-x-1">
           <Link href="/cart">
+            
             <Button size="sm" variant="ghost">
               <ShoppingBag className="h-5 w-5" />
               <span className="ml-2 text-sm font-bold">{cartCount}</span>

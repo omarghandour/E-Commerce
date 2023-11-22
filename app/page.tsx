@@ -47,7 +47,6 @@ export default async function Page({searchParams}: Props) {
   }`);
   
 
-  
   return (
     <div>
       <PushNotificationLayout>
