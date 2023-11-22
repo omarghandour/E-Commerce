@@ -27,9 +27,8 @@ export function CartItems() {
       variant: "destructive",
      })
   }
-
+     
   if(cartItems.length === 0) return <CartItemsEmpty />
-
   return (
     <ul
       role="list"
