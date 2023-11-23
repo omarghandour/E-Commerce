@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const NotReq = () => {
-          useEffect
+                  const [dd , setDd] = useState<boolean>();
+
           function notifyMe() {
                     if (!("Notification" in window)) {
                       // Check if the browser supports notifications
                       alert("This browser does not support desktop notification");
                     } else if (Notification.permission === "granted") {
+                              setDd(true);
                       // Check whether notification permissions have already been granted;
                       // if so, create a notification
                       const notification = new Notification("Hi there!");
                       // …
                     } else if (Notification.permission !== "denied") {
                       // We need to ask the user for permission
+                      setDd(true);
                       Notification.requestPermission().then((permission) => {
                         // If the user accepts, let's create a notification
                         if (permission === "granted") {
@@ -27,11 +30,11 @@ const NotReq = () => {
                   }
              useEffect(()=>{
 notifyMe();
-             },[])
+             },[dd])
                   
                   
   return (
-    <div><button onClick={notifyMe}>Eneable Notifications!</button>
+    <div><button style={dd ? {display:"none"} : {display:"block"} } onClick={notifyMe}>Eneable Notifications!</button>
     </div>
   )
 }
