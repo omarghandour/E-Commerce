@@ -15,7 +15,6 @@ const NotReq = () => {
                       // …
                     } else if (Notification.permission !== "denied") {
                       // We need to ask the user for permission
-                      setDd(true);
                       Notification.requestPermission().then((permission) => {
                         // If the user accepts, let's create a notification
                         if (permission === "granted") {
@@ -23,6 +22,12 @@ const NotReq = () => {
                           // …
                         }
                       });
+                    }else if (Notification.permission === "denied") {
+                              setDd(false);
+                      // The user has denied notifications
+                      alert("You have denied notifications");
+                    }else if(Notification.permission !== "granted"){
+                              setDd(false);
                     }
                   
                     // At last, if the user has denied notifications, and you
