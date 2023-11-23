@@ -32,7 +32,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="hedr mx-auto flex h-16 max-w-6xl items-center justify-between space-x-4 px-6 sm:space-x-0">
         <MainNav />
-        <NotReq />
+        {/* <NotReq /> */}
         <form onSubmit={onSubmit} className=" items-center lg:inline-flex">
           <Input
             id="search"
