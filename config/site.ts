@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Dinge", 
-  description: "Simple store for everyone and everything",
+  description: "Discover a symphony of craftsmanship at Dinge, where every click unveils a canvas of handmade wonders, weaving stories through the artistry of individual souls.",
   footer: [
     { name: "Home", href: "/" },
     { name: "About", href: "about" },

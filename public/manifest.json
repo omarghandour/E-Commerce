@@ -1,6 +1,7 @@
 {
   "name": "Dinge",
   "short_name": "Dinge",
+  "description": "Discover a symphony of craftsmanship at Dinge, where every click unveils a canvas of handmade wonders, weaving stories through the artistry of individual souls.",
   "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
