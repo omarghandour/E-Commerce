@@ -1,0 +1,29 @@
+/* LinksPage.css */
+
+.container {
+          text-align: center;
+        }
+        
+        .title {
+          color: #008080;
+        }
+        
+        .link-list {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .link-item {
+          margin: 8px 0;
+        }
+        
+        .link {
+          text-decoration: none;
+          color: #333;
+          padding: 8px;
+          margin: 4px 0;
+          display: block;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+        

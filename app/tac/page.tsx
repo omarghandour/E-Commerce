@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -17,13 +18,8 @@ const page = () => {
             You agree to use this website for lawful purposes only and in a manner consistent with all applicable laws and regulations.
         </p>
 
-        <h2>3. Intellectual Property</h2>
-        <p>
-            All content on this website, including text, graphics, logos, and images, is the intellectual property of [Your Company] and is protected by copyright laws.
-        </p>
 
-
-        <h2>4. Contact Us</h2>
+        <h2>3. <Link style={{background: 'black', color: 'white', padding: '2px', borderRadius:'5px'}} href={'/contactus'}>Contact Us</Link></h2>
         <p>
             If you have any questions or concerns regarding these Terms & Conditions, please contact us at [your contact information].
         </p>
