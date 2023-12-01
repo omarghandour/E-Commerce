@@ -22,6 +22,7 @@ const filters = [
       { value: "house", label: "House" },
       { value: "fashion", label: "Fashion" },
       { value: "decor", label: "Decor" },
+      { value: "office", label: "Office" },
     ],
   },
   {
@@ -50,7 +51,8 @@ const filters = [
       { value: "red", label: "Red" },
       { value: "white", label: "White" },
       { value: "gray", label: "Gray" },
-      { value: "all", label: "All Colors" }
+      { value: "all", label: "All Colors" },
+      { value: "custom", label: "Custom" },
     ],
   },
 ]
