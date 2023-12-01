@@ -11,7 +11,7 @@ export function CartSummary() {
     const {formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout} = useShoppingCart()
     const [isLoading, setLoading] = useState(false)
     const isDisabled = isLoading || cartCount === 0
-    const shippingAmount = cartCount! > 0 ? 500 : 0
+    const shippingAmount = cartCount! > 0 ? 5000 : 0
     const totalAmount = totalPrice! + shippingAmount
     console.log(formattedTotalPrice,'.', totalPrice,'.', cartDetails,'.', cartCount,'.', redirectToCheckout);
     
