@@ -18,8 +18,8 @@ const filters = [
       { value: "bags", label: "Bags" },
       { value: "beanbag", label: "Bean Bag" },
       { value: "mugs", label: "Mugs" },
-      { value: "scarves", label: "Scarves" },
-      { value: "wallets", label: "Wallets" },
+      { value: "mats", label: "Mats" },
+      { value: "house", label: "House" },
     ],
   },
   {
@@ -47,6 +47,7 @@ const filters = [
       { value: "red", label: "Red" },
       { value: "white", label: "White" },
       { value: "gray", label: "Gray" },
+      { value: "all", label: "All Colors" }
     ],
   },
 ]
