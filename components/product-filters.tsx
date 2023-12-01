@@ -17,9 +17,10 @@ const filters = [
     options: [
       { value: "bags", label: "Bags" },
       { value: "beanbag", label: "Bean Bag" },
-      { value: "mugs", label: "Mugs" },
+      { value: "kitchen", label: "Kitchen" },
       { value: "mats", label: "Mats" },
       { value: "house", label: "House" },
+      { value: "fashion", label: "Fashion" }
     ],
   },
   {
