@@ -20,7 +20,8 @@ const filters = [
       { value: "kitchen", label: "Kitchen" },
       { value: "mats", label: "Mats" },
       { value: "house", label: "House" },
-      { value: "fashion", label: "Fashion" }
+      { value: "fashion", label: "Fashion" },
+      { value: "decor", label: "Decor" },
     ],
   },
   {
@@ -33,7 +34,8 @@ const filters = [
       { value: "l", label: "Large" },
       { value: "xl", label: "X-Large" },
       { value: "one-size", label: "One Size" },
-      {value: "1kg", label: "1Kg"}
+      {value: "1kg", label: "1Kg"},
+      {value: "all", label: "All Sizes"},
     ],
   },
   {
