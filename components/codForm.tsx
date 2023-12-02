@@ -96,7 +96,7 @@ const CodForm = () => {
           </div>
           <div>
                     <label htmlFor="number">Number</label>
-                    <input onChange={(e) => setNumber(e.target.value)} value={number} type="text" placeholder='01...' id="number" required minLength={11} maxLength={20}/>
+                    <input onChange={(e) => setNumber(e.target.value)} value={number} type="numbrt" placeholder='01...' id="number" required minLength={11} maxLength={20}/>
           </div>
           <button onClick={btnn} className="bg-green-700 p-3 text-white font-bold" type='submit'>{msgg ? 'Error' : btn ? "Loading..." : "Submit" }</button>
     </form>
