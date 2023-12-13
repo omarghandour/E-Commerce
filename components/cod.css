@@ -18,6 +18,9 @@ input {
     top: 67%;
     height: 25%;
     }
+    .profile{
+      left: 35% !important;
+    }
  .hedr{
   height: 120px;
   }
@@ -58,12 +61,6 @@ input {
     top: 38% !important;
     left: 28% !important;
   }
-  .search{
-    position: absolute;
-    width: 40%;
-    left: 30%;
-    top: 25%;
-  }
 }
 @media (min-width: 1024px) {
   .SubmitLogo{
@@ -75,4 +72,11 @@ input {
     left: 30%;
     top: 25%;
   }
+}
+.profile{
+  position: absolute;
+  top: 120%;
+  background: white;
+  padding: 20px;
+  left: 75% ;
 }

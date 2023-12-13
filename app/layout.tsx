@@ -9,7 +9,7 @@ import { SiteBlob } from "@/components/site-blob"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 export const metadata: Metadata = {
-  title: siteConfig.name, 
+  title: siteConfig.name,
   manifest: '/manifest.json',
   description: siteConfig.description,
   icons:{

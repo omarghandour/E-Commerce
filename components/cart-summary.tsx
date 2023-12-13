@@ -3,19 +3,23 @@
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart"
+import {useSession} from 'next-auth/react'
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { stringify } from "querystring"
+import SigninButton from "./SigninButton"
 
 export function CartSummary() {
+  const {data: session} = useSession();
     const {formattedTotalPrice, totalPrice, cartDetails, cartCount, redirectToCheckout} = useShoppingCart()
     const [isLoading, setLoading] = useState(false)
     const isDisabled = isLoading || cartCount === 0
     const shippingAmount = cartCount! > 0 ? 5000 : 0
     const totalAmount = totalPrice! + shippingAmount
-    console.log(formattedTotalPrice,'.', totalPrice,'.', cartDetails,'.', cartCount,'.', redirectToCheckout);
-    
-    
+
+
+
     async function onCheckoute() {
       setLoading(true)
     const response = await fetch('/api/cod',{
@@ -25,7 +29,7 @@ export function CartSummary() {
     const data = await response.json()
     const result = await redirectToCheckout(data.id)
     if(result?.error){
-       console.error(result)      
+       console.error(result)
     }
     setLoading(false)
     }
@@ -40,10 +44,12 @@ export function CartSummary() {
     const data = await response.json()
     const result = await redirectToCheckout(data.id)
     if(result?.error){
-       console.error(result)      
+       console.error(result)
     }
     setLoading(false)
   }
+
+
 // console.log(cartDetails);
 
   return (
@@ -73,12 +79,16 @@ export function CartSummary() {
       </dl>
 
       <div className="mt-6">
-        <Link href={'/cod'}>
+       {session?.user ?  <Link href={'/cod'}>
         <Button  className="w-full" disabled={isDisabled}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? "Loading..." : "Checkout"}
-        </Button></Link>
-        
+        </Button></Link> : <>
+        <p className="text-center mb-2">Sign in with Google to Checkout</p>
+        <div className="m-auto flex flex-col items-center"><SigninButton /></div>
+        </>}
+
+
       </div>
     </section>
   )
