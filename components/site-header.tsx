@@ -53,7 +53,7 @@ const [prof, setProf] = useState<boolean>(false);
             defaultValue={defaultSearchQuery}
           />
         </form>
-        <div className="flex items-center space-x-1">
+        <div className="mr-2 flex items-center space-x-1">
           <Link href="/cart">
 
             <Button size="sm" variant="ghost">
@@ -63,7 +63,7 @@ const [prof, setProf] = useState<boolean>(false);
             </Button>
           </Link>
           <ThemeToggle />
-          <button onClick={() => profilehandler()}>
+          <button className="w-8" onClick={() => profilehandler()}>
 {          // eslint-disable-next-line @next/next/no-img-element
 }          <img  id="profile" className="rounded" src={session?.user?.image || "./profile-circle-svgrepo-com.svg"} alt="d" style={{width: "35px"}} />
          </button>

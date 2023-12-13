@@ -17,7 +17,7 @@ const CodForm = () => {
           const {cartDetails} = useShoppingCart();
           const cartItems = Object.entries(cartDetails!).map(([_, product]) => product)
           const j = cartItems
-          const cd: object = j.map(obj => obj).filter(obj => obj !== undefined);
+          const cd: any[] = j.map(obj => obj).filter(obj => obj !== undefined);
           const [bss, setBss] = useState(false)
           const [btn, setBtn] = useState(false);
           const [msgg, setMsgg] = useState(false);
@@ -26,7 +26,7 @@ const CodForm = () => {
 const names = cartItems.map((obj: { name: string }) => obj.name).filter((name: string) => name !== undefined);
 // const prices = cartItems.map((obj: { price: number }) => obj.price).filter((price: number) => price !== undefined);
 const quantities = cartItems.map((obj: { quantity: number }) => obj.quantity).filter((quantity: number) => quantity !== undefined);
-
+// const colors = cartItems.map((obj: { color: string[] }) => obj.color).filter((color: number) => color !== undefined);
 const n = `'${JSON.stringify(names)}'`;
 // const p = `'${prices}'`;
 const gdsg: string[] = []
@@ -34,9 +34,11 @@ const q =  quantities.map(el => {
   let fg = JSON.stringify(el)
   gdsg.push(fg)
 });
-
 const qq = gdsg.join('');
 
+const color = cd.map((obj: { product_data: string }) => obj.product_data).filter((color: string) => color !== undefined);
+const desc = JSON.stringify(color)
+console.log(desc);
 
 
            function btnn (){
@@ -114,8 +116,8 @@ let data={
       {
           "name": n,
           "amount_cents": ta,
-          "description": "Power Bank",
-          "quantity": qq
+          "description": desc,
+          "quantity": qq,
       }
       ]
   }
@@ -140,19 +142,19 @@ let data={
     "expiration": 3600,
     "order_id": id,
     "billing_data": {
-      "apartment": "803",
+      "apartment": "NA",
       "email": session?.user?.email,
-      "floor": "42",
+      "floor": "NA",
       "first_name": session?.user?.name,
-      "street": "Ethan Land",
-      "building": "8028",
+      "street": "NA",
+      "building": "NA",
       "phone_number": "+86(8)9135210487",
-      "shipping_method": "PKG",
-      "postal_code": "01898",
-      "city": "Jaskolskiburgh",
-      "country": "CR",
-      "last_name": "Nicolas",
-      "state": "Utah"
+      "shipping_method": "NA",
+      "postal_code": "NA",
+      "city": "NA",
+      "country": "NA",
+      "last_name": "NA",
+      "state": "NA"
     },
     "currency": "EGP",
     "integration_id": 4322361,
@@ -184,9 +186,12 @@ useEffect(()=>{
     setBtn(false);
   }
 },[okk])
+
 const cardpayment = async (lastToken: any)=>{
+
 let iframeurl= `https://accept.paymob.com/api/acceptance/iframes/798278?payment_token=${lastToken}`;
-window.open(iframeurl, '_blank');
+ window.open(iframeurl, '_blank');
+ router.push('/')
 }
 
 
