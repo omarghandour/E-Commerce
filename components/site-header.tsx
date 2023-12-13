@@ -12,8 +12,10 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import NotReq from "./notReq"
 import SigninButton from "./SigninButton"
 import { useState } from "react"
+import {useSession} from 'next-auth/react'
 
 export function SiteHeader() {
+  const {data: session} = useSession();
 const [prof, setProf] = useState<boolean>(false);
   const Pathname = usePathname()
   const router = useRouter()
@@ -62,7 +64,7 @@ const [prof, setProf] = useState<boolean>(false);
           </Link>
           <ThemeToggle />
           <button onClick={() => profilehandler()}>
-          <img  id="profile" src="./profile-circle-svgrepo-com.svg" alt="d" style={{width: "35px"}} />
+          <img  id="profile" className="rounded" src={session ? session.user?.image : "./profile-circle-svgrepo-com.svg"} alt="d" style={{width: "35px"}} />
           </button>
           <div className={prof ? " profile " : "hidden"}>
             <SigninButton />
