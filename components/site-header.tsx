@@ -64,8 +64,9 @@ const [prof, setProf] = useState<boolean>(false);
           </Link>
           <ThemeToggle />
           <button onClick={() => profilehandler()}>
-          <img  id="profile" className="rounded" src={session ? session.user?.image : "./profile-circle-svgrepo-com.svg"} alt="d" style={{width: "35px"}} />
-          </button>
+{          // eslint-disable-next-line @next/next/no-img-element
+}          <img  id="profile" className="rounded" src={session?.user?.image || "./profile-circle-svgrepo-com.svg"} alt="d" style={{width: "35px"}} />
+         </button>
           <div className={prof ? " profile " : "hidden"}>
             <SigninButton />
           </div>
