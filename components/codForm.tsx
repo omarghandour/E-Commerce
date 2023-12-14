@@ -14,7 +14,7 @@ const CodForm = () => {
           const [address2, setAdress2] = useState('')
           const [number, setNumber] = useState('')
           const [error, setError] = useState([])
-          const {cartDetails} = useShoppingCart();
+          const {cartDetails, totalPrice} = useShoppingCart();
           const cartItems = Object.entries(cartDetails!).map(([_, product]) => product)
           const j = cartItems
           const cd: any[] = j.map(obj => obj).filter(obj => obj !== undefined);
@@ -38,7 +38,7 @@ const qq = gdsg.join('');
 
 const color = cd.map((obj: { product_data: string }) => obj.product_data).filter((color: string) => color !== undefined);
 const desc = JSON.stringify(color)
-console.log(desc);
+const ta = JSON.stringify(totalPrice)
 
 
            function btnn (){
@@ -85,7 +85,6 @@ console.log(desc);
               }
           },[bss, okk])
 
-const ta = "100"
 const rr = process.env.PAYMOP_API_KEY
 const paymob = async () => {
 setBtn(true)
