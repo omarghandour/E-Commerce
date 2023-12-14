@@ -23,6 +23,8 @@ input {
     }
  .hedr{
   height: 120px;
+  display: flex;
+  justify-content: center;
   }
   .SubmitLogo{
     display: block !important;
@@ -79,4 +81,13 @@ input {
   background: white;
   padding: 20px;
   left: 75% ;
+}
+@media (max-width: 300px) {
+  .hedr{
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+    }
 }
