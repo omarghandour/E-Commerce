@@ -14,6 +14,14 @@ const handler = NextAuth({
     // })
 // ...add more providers here
 ],
+callbacks: {
+  async jwt({ token, account }) {
+    if (account) {
+      token.accessToken = account.access_token
+    }
+    return token
+
+  }}
 })
 
 export {handler as GET, handler as POST}

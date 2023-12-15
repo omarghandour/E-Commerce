@@ -84,7 +84,7 @@ export function CartSummary() {
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? "Loading..." : "Checkout"}
         </Button></Link> : <>
-        <p className="text-center mb-2">Sign in with Google to Checkout</p>
+        <p className="mb-2 text-center">Sign in with Google to Checkout</p>
         <div className="m-auto flex flex-col items-center"><SigninButton /></div>
         </>}
 

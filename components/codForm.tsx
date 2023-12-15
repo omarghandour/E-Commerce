@@ -5,8 +5,10 @@ import { useShoppingCart } from 'use-shopping-cart'
 import './cod.css'
 import { Button } from './ui/button'
 import {useSession} from 'next-auth/react'
+
 const CodForm = () => {
-  const {data: session} = useSession();
+  const {data: session }  = useSession();
+
   const router = useRouter();
           const [fullname, setFullname] = useState('')
           const [email, setEmail] = useState('')
@@ -36,11 +38,12 @@ const q =  quantities.map(el => {
 });
 const qq = gdsg.join('');
 
+
 const color = cd.map((obj: { product_data: string }) => obj.product_data).filter((color: string) => color !== undefined);
 const desc = JSON.stringify(color)
 const ta = JSON.stringify(totalPrice)
 
-
+console.log(session);
            function btnn (){
             setBtn(true);
            }
@@ -86,7 +89,27 @@ const ta = JSON.stringify(totalPrice)
           },[bss, okk])
 
 const rr = process.env.PAYMOP_API_KEY
-const paymob = async () => {
+
+
+
+const gyuy = session?.user?.name?.split(" ")
+
+const getnum = ( ) => {
+  if(gyuy){
+  const fn = gyuy[0];
+  const ln = gyuy[1];
+
+  let ff = prompt("Get number")
+  if (ff != null || ff != undefined) {
+    if (ff.length >=  11) {
+    paymob(ff, fn , ln)
+  }else{
+    alert("number is not valid please click on the button again")
+
+  }
+}}}
+const paymob = async (ff: any, fn: any,  ln: any) => {
+
 setBtn(true)
   let data={
       "api_key": rr
@@ -101,10 +124,10 @@ setBtn(true)
   let response = await request.json()
 
   let tt = response.token
-secondstep(tt)
+secondstep(tt, ff , fn, ln)
 
 }
-const secondstep = async (tt: any)=>{
+const secondstep = async (tt: any , ff: any, fn: any, ln: any)=>{
 let data={
     "auth_token": tt,
     "delivery_needed": "false",
@@ -131,10 +154,10 @@ let response=await request.json()
 
 let id = response.id
 
-thirdstep(id,tt)
+thirdstep(id,tt, ff, fn, ln)
 }
 
-const thirdstep = async (id: any,tt: any)=>{
+const thirdstep = async (id: any,tt: any, ff: any, fn:any, ln:any)=>{
 let data={
     "auth_token": tt,
     "amount_cents": ta,
@@ -144,15 +167,15 @@ let data={
       "apartment": "NA",
       "email": session?.user?.email,
       "floor": "NA",
-      "first_name": session?.user?.name,
+      "first_name": fn,
       "street": "NA",
       "building": "NA",
-      "phone_number": "+86(8)9135210487",
+      "phone_number": ff,
       "shipping_method": "NA",
       "postal_code": "NA",
       "city": "NA",
       "country": "NA",
-      "last_name": "NA",
+      "last_name": ln,
       "state": "NA"
     },
     "currency": "EGP",
@@ -192,11 +215,23 @@ let iframeurl= `https://accept.paymob.com/api/acceptance/iframes/798278?payment_
  window.open(iframeurl, '_blank');
  router.push('/')
 }
+// const phone = prompt("Enter your phone number");
+// if(phone == null || phone == undefined){
+//   alert("Invalid phone number")
+//   console.log(phone, 'ggg');
 
-
+// }
+//    if (phone != null || phone != undefined) {
+//   if(phone.length >= 11){
+//     alert("Ok");
+//   }else {
+// alert("Invalid phone number");
+//   }
+// }
   return (
     <>
-     <Button onClick={paymob} className="mt-1 h-11   w-full bg-black" >
+
+     <Button onClick={getnum} className="mt-1 h-11   w-full bg-black" >
                 {msgg ? 'Error' : btn ? "Loading..." : "pay with card" }
 
         </Button>
