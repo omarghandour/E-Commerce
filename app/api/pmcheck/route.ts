@@ -1,6 +1,3 @@
-
-const route = (request: Request) => {
+export async function POST(request: Request) {
 
 }
-
-export default route
