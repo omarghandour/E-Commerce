@@ -19,7 +19,7 @@ const codSchema = new Schema({
     type: String,
     required: [true, "Message is required."],
   },
-  
+
   date: {
     type: Date,
     default: Date.now,
@@ -38,7 +38,7 @@ type: String
 },
 quantity: {
   type: [Number]
-}, 
+},
 address1: {
   type: String,
   required: [true, "adress 1 is required."],
