@@ -79,7 +79,7 @@ export function CartSummary() {
       </dl>
 
       <div className="mt-6">
-       {session?.user ?  <Link href={'/cod'}>
+       {session?.user ?  <Link href={cartCount === 0 ? '' : '/cod'}>
         <Button  className="w-full" disabled={isDisabled}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? "Loading..." : "Checkout"}
