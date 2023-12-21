@@ -12,7 +12,6 @@ const CodForm = () => {
   const router = useRouter();
           const [fullname, setFullname] = useState('')
           const [email, setEmail] = useState('')
-          const [lasttoken ,setLastToken] = useState('')
           const [address1, setAddress1] = useState('')
           const [address2, setAdress2] = useState('')
           const [number, setNumber] = useState('')
@@ -201,25 +200,22 @@ if (!ok) {
   setMsgg(false);
   setOKk(true);
 }
-// cardpayment(lastToken)
-setLastToken(lastToken);
+cardpayment(lastToken)
 }
-useEffect(function om (){
+useEffect(()=>{
   if(okk === true){
-  let iframeurl= `https://accept.paymob.com/api/acceptance/iframes/798278?payment_token=${lasttoken}`;
- window.open(iframeurl, '_blank');
-
     clearCart();
     setBtn(false);
-
- router.push('/')
   }
-},[okk,setLastToken])
+},[okk])
 
-// const cardpayment = async (lastToken: any)=>{
+const cardpayment = async (lastToken: any)=>{
 
-
-// }
+let iframeurl= `https://accept.paymob.com/api/acceptance/iframes/798278?payment_token=${lastToken}`;
+//  window.open(iframeurl, '_blank');
+router.replace(iframeurl)
+//  router.push('/')
+}
 // const phone = prompt("Enter your phone number");
 // if(phone == null || phone == undefined){
 //   alert("Invalid phone number")
